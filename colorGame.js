@@ -50,6 +50,8 @@ resetButton.addEventListener("click", function(){
 	pickedColor = pickColor();
 	//zmienia opis koloru do zgadnięcia
 	colorDisplay.textContent = pickedColor;
+	this.textContent = "Nowe kolory"
+	messageDisplay.textContent = "";
 	//zmienia kolory kwadratów
 	for(var i = 0; i < squares.length; i++){
 		squares[i].style.background = colors[i];
