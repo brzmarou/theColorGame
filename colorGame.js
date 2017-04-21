@@ -22,7 +22,7 @@ easyBtn.addEventListener("click",function(){
 	colorDisplay.textContent = pickedColor;
 	for(var i = 0; i < squares.length; i++){
 		if(colors[i]){
-			squares[i].style.background = colors[i];
+			squares[i].style.backgroundColor = colors[i];
 		} else {
 			squares[i].style.display = "none";
 		}
@@ -37,7 +37,7 @@ hardBtn.addEventListener("click",function(){
 	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
 	for(var i = 0; i < squares.length; i++){
-		squares[i].style.background = colors[i];
+		squares[i].style.backgroundColor = colors[i];
 		squares[i].style.display = "block";
 		}
 });
@@ -54,29 +54,29 @@ resetButton.addEventListener("click", function(){
 	messageDisplay.textContent = "";
 	//zmienia kolory kwadratów
 	for(var i = 0; i < squares.length; i++){
-		squares[i].style.background = colors[i];
+		squares[i].style.backgroundColor = colors[i];
 	}
-h1.style.background = "steelblue";
+h1.style.backgroundColor = "steelblue";
 });
 
 colorDisplay.textContent = pickedColor;
 
 for(var i = 0; i< squares.length; i++){
 	//dodaje kolory do kwadratów
-	squares[i].style.background = colors[i];
+	squares[i].style.backgroundColor = colors[i];
 
 	//dodaje wyjątki do kwadratów
 	squares[i].addEventListener("click", function(){
 		//pobiera kolor klikniętego kwadratu
-		var clickedColor = this.style.background;
+		var clickedColor = this.style.backgroundColor;
 		//porównuje pobrany kolor z kolorem wylosowanym
 		if(clickedColor === pickedColor){
 			messageDisplay.textContent = "Brawo!";
 			resetButton.textContent = "Nowa gra?";
 			changeColors(clickedColor);
-			h1.style.background = clickedColor;
+			h1.style.backgroundColor = clickedColor;
 		} else {
-			this.style.background = "#232323";
+			this.style.backgroundColor = "#232323";
 			messageDisplay.textContent = "Nie ten kolor!";
 		}
 	});
@@ -85,7 +85,7 @@ for(var i = 0; i< squares.length; i++){
 function changeColors(color) {
 	//pętla przez wszystkie kwadraty zmeiniająca kolory po kliknięciu
 	for(var i = 0; i <squares.length; i++){
-		squares[i].style.background = color;
+		squares[i].style.backgroundColor = color;
 	}
 }
 
